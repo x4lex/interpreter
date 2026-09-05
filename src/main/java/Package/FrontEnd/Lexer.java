@@ -13,6 +13,7 @@ public class Lexer {
             else if (problem.charAt(i) == '-') list.add(new Token(Token.Kind.MNS, problem.charAt(i)+""));
             else if (problem.charAt(i) == '*') list.add(new Token(Token.Kind.MUL, problem.charAt(i)+""));
             else if (problem.charAt(i) == '/') list.add(new Token(Token.Kind.DIV, problem.charAt(i)+""));
+            else if (problem.charAt(i) == '^') list.add(new Token(Token.Kind.POW, problem.charAt(i)+""));
             else if (problem.charAt(i) == '(') list.add(new Token(Token.Kind.LBR, problem.charAt(i)+""));
             else if (problem.charAt(i) == ')') list.add(new Token(Token.Kind.RBR, problem.charAt(i)+""));
             if (Character.isDigit(problem.charAt(i))) {

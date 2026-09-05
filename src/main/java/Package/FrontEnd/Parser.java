@@ -29,10 +29,17 @@ public class Parser {
     }
 
     private Expr term(List<Token> list) {
-        Expr n2 = factor(list);
+        Expr n2 = pow(list);
         while (isCurrentToken(Token.Kind.MUL) || isCurrentToken(Token.Kind.DIV)) {
-            n2 = new BinOP(n2, consumeCurrentToken(), factor(list));
+            n2 = new BinOP(n2, consumeCurrentToken(), pow(list));
         } return n2;
+    }
+
+    private Expr pow(List<Token> list) {
+        Expr n3 = factor(list);
+        while (isCurrentToken(Token.Kind.POW)) {
+            n3 = new BinOP(n3, consumeCurrentToken(), factor(list));
+        } return n3;
     }
 
     private Expr factor(List<Token> list) {

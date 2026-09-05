@@ -1,7 +1,7 @@
 package Package.Classes.LexPrs;
 
 public class Token {
-    public enum Kind {PLS, MNS, MUL, DIV, INT, LBR, RBR, EOF}
+    public enum Kind {PLS, MNS, MUL, DIV, INT, LBR, RBR, EOF, POW}
     private Kind kind;
     private String val;
 

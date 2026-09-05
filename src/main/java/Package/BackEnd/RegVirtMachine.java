@@ -15,6 +15,11 @@ public class RegVirtMachine {
                 case "MNS" -> rgstrs[Integer.parseInt(str[1])] = rgstrs[Integer.parseInt(str[3])] - rgstrs[Integer.parseInt(str[2])];
                 case "MUL" -> rgstrs[Integer.parseInt(str[1])] = rgstrs[Integer.parseInt(str[3])] * rgstrs[Integer.parseInt(str[2])];
                 case "DIV" -> rgstrs[Integer.parseInt(str[1])] = rgstrs[Integer.parseInt(str[3])] / rgstrs[Integer.parseInt(str[2])];
+                case "POW" -> {
+                    int ans = 1;
+                    for (int i = rgstrs[Integer.parseInt(str[2])]; i > 0; i--) ans *= rgstrs[Integer.parseInt(str[3])];
+                    rgstrs[Integer.parseInt(str[1])] = ans;
+                }
             }
         }
         return rgstrs[0];
